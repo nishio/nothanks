@@ -1,0 +1,1193 @@
+(log) logs/play-20260112-142906.txt
+(setup) seed=None seat=0 ai=('heuristic2', 'heuristic') show_removed=False show_math=True
+
+========================================================================
+[29]-0 (Active card: 29   Tokens on card: 0   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens=11  cards=(none)                     cardPts=  0  score= -11
+>[1] Player1     tokens=11  cards=(none)                     cardPts=  0  score= -11
+ [2] Player2     tokens=11  cards=(none)                     cardPts=  0  score= -11
+========================================================================
+
+========================================================================
+[29]-1 (Active card: 29   Tokens on card: 1   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens=11  cards=(none)                     cardPts=  0  score= -11
+ [1] Player1     tokens=10  cards=(none)                     cardPts=  0  score= -10
+>[2] Player2     tokens=11  cards=(none)                     cardPts=  0  score= -11
+========================================================================
+
+========================================================================
+[29]-2 (Active card: 29   Tokens on card: 2   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens=11  cards=(none)                     cardPts=  0  score= -11
+ [1] Player1     tokens=10  cards=(none)                     cardPts=  0  score= -10
+ [2] Player2     tokens=10  cards=(none)                     cardPts=  0  score= -10
+========================================================================
+(info) If TAKE now: Δscore = +27 (ΔcardPts=+29, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +26.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +26.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[29]-3 (Active card: 29   Tokens on card: 3   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens=10  cards=(none)                     cardPts=  0  score= -10
+>[1] Player1     tokens=10  cards=(none)                     cardPts=  0  score= -10
+ [2] Player2     tokens=10  cards=(none)                     cardPts=  0  score= -10
+========================================================================
+
+========================================================================
+[29]-4 (Active card: 29   Tokens on card: 4   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens=10  cards=(none)                     cardPts=  0  score= -10
+ [1] Player1     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+>[2] Player2     tokens=10  cards=(none)                     cardPts=  0  score= -10
+========================================================================
+
+========================================================================
+[29]-5 (Active card: 29   Tokens on card: 5   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens=10  cards=(none)                     cardPts=  0  score= -10
+ [1] Player1     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+ [2] Player2     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+========================================================================
+(info) If TAKE now: Δscore = +24 (ΔcardPts=+29, tokens_on_card=5).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +23.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +23.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[29]-6 (Active card: 29   Tokens on card: 6   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+>[1] Player1     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+ [2] Player2     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+========================================================================
+
+========================================================================
+[29]-7 (Active card: 29   Tokens on card: 7   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+ [1] Player1     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+>[2] Player2     tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+========================================================================
+
+========================================================================
+[29]-8 (Active card: 29   Tokens on card: 8   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens= 9  cards=(none)                     cardPts=  0  score=  -9
+ [1] Player1     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+ [2] Player2     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+========================================================================
+(info) If TAKE now: Δscore = +21 (ΔcardPts=+29, tokens_on_card=8).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +20.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +20.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[29]-9 (Active card: 29   Tokens on card: 9   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+>[1] Player1     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+ [2] Player2     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+========================================================================
+
+========================================================================
+[29]-10 (Active card: 29   Tokens on card: 10   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+ [1] Player1     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+>[2] Player2     tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+========================================================================
+
+========================================================================
+[29]-11 (Active card: 29   Tokens on card: 11   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens= 8  cards=(none)                     cardPts=  0  score=  -8
+ [1] Player1     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+ [2] Player2     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+========================================================================
+(info) If TAKE now: Δscore = +18 (ΔcardPts=+29, tokens_on_card=11).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +17.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +17.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[29]-12 (Active card: 29   Tokens on card: 12   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+>[1] Player1     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+ [2] Player2     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+========================================================================
+
+========================================================================
+[29]-13 (Active card: 29   Tokens on card: 13   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+ [1] Player1     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+>[2] Player2     tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+========================================================================
+
+========================================================================
+[29]-14 (Active card: 29   Tokens on card: 14   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens= 7  cards=(none)                     cardPts=  0  score=  -7
+ [1] Player1     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+ [2] Player2     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+========================================================================
+(info) If TAKE now: Δscore = +15 (ΔcardPts=+29, tokens_on_card=14).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +14.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +14.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[29]-15 (Active card: 29   Tokens on card: 15   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+>[1] Player1     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+ [2] Player2     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+========================================================================
+
+========================================================================
+[29]-16 (Active card: 29   Tokens on card: 16   Deck left: 23)
+------------------------------------------------------------------------
+ [0] YOU         tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+ [1] Player1     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+>[2] Player2     tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+========================================================================
+
+========================================================================
+[29]-17 (Active card: 29   Tokens on card: 17   Deck left: 23)
+------------------------------------------------------------------------
+>[0] YOU         tokens= 6  cards=(none)                     cardPts=  0  score=  -6
+ [1] Player1     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+ [2] Player2     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+========================================================================
+(info) If TAKE now: Δscore = +12 (ΔcardPts=+29, tokens_on_card=17).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +11.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +11.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[17]-0 (Active card: 17   Tokens on card: 0   Deck left: 22)
+------------------------------------------------------------------------
+>[0] YOU         tokens=23  cards=29                         cardPts= 29  score=   6
+ [1] Player1     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+ [2] Player2     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+========================================================================
+(info) If TAKE now: Δscore = +17 (ΔcardPts=+17, tokens_on_card=0).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +16.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +16.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[17]-1 (Active card: 17   Tokens on card: 1   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=22  cards=29                         cardPts= 29  score=   7
+>[1] Player1     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+ [2] Player2     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+========================================================================
+
+========================================================================
+[17]-2 (Active card: 17   Tokens on card: 2   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=22  cards=29                         cardPts= 29  score=   7
+ [1] Player1     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+>[2] Player2     tokens= 5  cards=(none)                     cardPts=  0  score=  -5
+========================================================================
+
+========================================================================
+[17]-3 (Active card: 17   Tokens on card: 3   Deck left: 22)
+------------------------------------------------------------------------
+>[0] YOU         tokens=22  cards=29                         cardPts= 29  score=   7
+ [1] Player1     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+ [2] Player2     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+========================================================================
+(info) If TAKE now: Δscore = +14 (ΔcardPts=+17, tokens_on_card=3).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +13.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +13.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[17]-4 (Active card: 17   Tokens on card: 4   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=21  cards=29                         cardPts= 29  score=   8
+>[1] Player1     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+ [2] Player2     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+========================================================================
+
+========================================================================
+[17]-5 (Active card: 17   Tokens on card: 5   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=21  cards=29                         cardPts= 29  score=   8
+ [1] Player1     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+>[2] Player2     tokens= 4  cards=(none)                     cardPts=  0  score=  -4
+========================================================================
+
+========================================================================
+[17]-6 (Active card: 17   Tokens on card: 6   Deck left: 22)
+------------------------------------------------------------------------
+>[0] YOU         tokens=21  cards=29                         cardPts= 29  score=   8
+ [1] Player1     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+ [2] Player2     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+========================================================================
+(info) If TAKE now: Δscore = +11 (ΔcardPts=+17, tokens_on_card=6).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +10.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +10.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[17]-7 (Active card: 17   Tokens on card: 7   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=20  cards=29                         cardPts= 29  score=   9
+>[1] Player1     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+ [2] Player2     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+========================================================================
+
+========================================================================
+[17]-8 (Active card: 17   Tokens on card: 8   Deck left: 22)
+------------------------------------------------------------------------
+ [0] YOU         tokens=20  cards=29                         cardPts= 29  score=   9
+ [1] Player1     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+>[2] Player2     tokens= 3  cards=(none)                     cardPts=  0  score=  -3
+========================================================================
+
+========================================================================
+[17]-9 (Active card: 17   Tokens on card: 9   Deck left: 22)
+------------------------------------------------------------------------
+>[0] YOU         tokens=20  cards=29                         cardPts= 29  score=   9
+ [1] Player1     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+ [2] Player2     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+========================================================================
+(info) If TAKE now: Δscore = +8 (ΔcardPts=+17, tokens_on_card=9).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +7.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +7.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[3]-0 (Active card: 3   Tokens on card: 0   Deck left: 21)
+------------------------------------------------------------------------
+>[0] YOU         tokens=29  cards=17 | 29                    cardPts= 46  score=  17
+ [1] Player1     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+ [2] Player2     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+========================================================================
+(info) If TAKE now: Δscore = +3 (ΔcardPts=+3, tokens_on_card=0).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +2.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +2.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[3]-1 (Active card: 3   Tokens on card: 1   Deck left: 21)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=17 | 29                    cardPts= 46  score=  18
+>[1] Player1     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+ [2] Player2     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+========================================================================
+
+========================================================================
+[3]-2 (Active card: 3   Tokens on card: 2   Deck left: 21)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=17 | 29                    cardPts= 46  score=  18
+ [1] Player1     tokens= 1  cards=(none)                     cardPts=  0  score=  -1
+>[2] Player2     tokens= 2  cards=(none)                     cardPts=  0  score=  -2
+========================================================================
+
+========================================================================
+[8]-0 (Active card: 8   Tokens on card: 0   Deck left: 20)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=17 | 29                    cardPts= 46  score=  18
+ [1] Player1     tokens= 1  cards=(none)                     cardPts=  0  score=  -1
+>[2] Player2     tokens= 4  cards=3                          cardPts=  3  score=  -1
+========================================================================
+
+========================================================================
+[8]-1 (Active card: 8   Tokens on card: 1   Deck left: 20)
+------------------------------------------------------------------------
+>[0] YOU         tokens=28  cards=17 | 29                    cardPts= 46  score=  18
+ [1] Player1     tokens= 1  cards=(none)                     cardPts=  0  score=  -1
+ [2] Player2     tokens= 3  cards=3                          cardPts=  3  score=   0
+========================================================================
+(info) If TAKE now: Δscore = +7 (ΔcardPts=+8, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +6.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +6.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[8]-2 (Active card: 8   Tokens on card: 2   Deck left: 20)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=17 | 29                    cardPts= 46  score=  19
+>[1] Player1     tokens= 1  cards=(none)                     cardPts=  0  score=  -1
+ [2] Player2     tokens= 3  cards=3                          cardPts=  3  score=   0
+========================================================================
+
+========================================================================
+[8]-3 (Active card: 8   Tokens on card: 3   Deck left: 20)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=17 | 29                    cardPts= 46  score=  19
+ [1] Player1     tokens= 0  cards=(none)                     cardPts=  0  score=   0
+>[2] Player2     tokens= 3  cards=3                          cardPts=  3  score=   0
+========================================================================
+
+========================================================================
+[8]-4 (Active card: 8   Tokens on card: 4   Deck left: 20)
+------------------------------------------------------------------------
+>[0] YOU         tokens=27  cards=17 | 29                    cardPts= 46  score=  19
+ [1] Player1     tokens= 0  cards=(none)                     cardPts=  0  score=   0
+ [2] Player2     tokens= 2  cards=3                          cardPts=  3  score=   1
+========================================================================
+(info) If TAKE now: Δscore = +4 (ΔcardPts=+8, tokens_on_card=4).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +3.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +3.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[14]-0 (Active card: 14   Tokens on card: 0   Deck left: 19)
+------------------------------------------------------------------------
+>[0] YOU         tokens=31  cards=8 | 17 | 29                cardPts= 54  score=  23
+ [1] Player1     tokens= 0  cards=(none)                     cardPts=  0  score=   0
+ [2] Player2     tokens= 2  cards=3                          cardPts=  3  score=   1
+========================================================================
+(info) If TAKE now: Δscore = +14 (ΔcardPts=+14, tokens_on_card=0).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +13.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +13.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[14]-1 (Active card: 14   Tokens on card: 1   Deck left: 19)
+------------------------------------------------------------------------
+ [0] YOU         tokens=30  cards=8 | 17 | 29                cardPts= 54  score=  24
+>[1] Player1     tokens= 0  cards=(none)                     cardPts=  0  score=   0
+ [2] Player2     tokens= 2  cards=3                          cardPts=  3  score=   1
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[33]-0 (Active card: 33   Tokens on card: 0   Deck left: 18)
+------------------------------------------------------------------------
+ [0] YOU         tokens=30  cards=8 | 17 | 29                cardPts= 54  score=  24
+>[1] Player1     tokens= 1  cards=14                         cardPts= 14  score=  13
+ [2] Player2     tokens= 2  cards=3                          cardPts=  3  score=   1
+========================================================================
+
+========================================================================
+[33]-1 (Active card: 33   Tokens on card: 1   Deck left: 18)
+------------------------------------------------------------------------
+ [0] YOU         tokens=30  cards=8 | 17 | 29                cardPts= 54  score=  24
+ [1] Player1     tokens= 0  cards=14                         cardPts= 14  score=  14
+>[2] Player2     tokens= 2  cards=3                          cardPts=  3  score=   1
+========================================================================
+
+========================================================================
+[33]-2 (Active card: 33   Tokens on card: 2   Deck left: 18)
+------------------------------------------------------------------------
+>[0] YOU         tokens=30  cards=8 | 17 | 29                cardPts= 54  score=  24
+ [1] Player1     tokens= 0  cards=14                         cardPts= 14  score=  14
+ [2] Player2     tokens= 1  cards=3                          cardPts=  3  score=   2
+========================================================================
+(info) If TAKE now: Δscore = +31 (ΔcardPts=+33, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +30.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +30.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[33]-3 (Active card: 33   Tokens on card: 3   Deck left: 18)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17 | 29                cardPts= 54  score=  25
+>[1] Player1     tokens= 0  cards=14                         cardPts= 14  score=  14
+ [2] Player2     tokens= 1  cards=3                          cardPts=  3  score=   2
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[10]-0 (Active card: 10   Tokens on card: 0   Deck left: 17)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17 | 29                cardPts= 54  score=  25
+>[1] Player1     tokens= 3  cards=14 | 33                    cardPts= 47  score=  44
+ [2] Player2     tokens= 1  cards=3                          cardPts=  3  score=   2
+========================================================================
+
+========================================================================
+[10]-1 (Active card: 10   Tokens on card: 1   Deck left: 17)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17 | 29                cardPts= 54  score=  25
+ [1] Player1     tokens= 2  cards=14 | 33                    cardPts= 47  score=  45
+>[2] Player2     tokens= 1  cards=3                          cardPts=  3  score=   2
+========================================================================
+
+========================================================================
+[10]-2 (Active card: 10   Tokens on card: 2   Deck left: 17)
+------------------------------------------------------------------------
+>[0] YOU         tokens=29  cards=8 | 17 | 29                cardPts= 54  score=  25
+ [1] Player1     tokens= 2  cards=14 | 33                    cardPts= 47  score=  45
+ [2] Player2     tokens= 0  cards=3                          cardPts=  3  score=   3
+========================================================================
+(info) If TAKE now: Δscore = +8 (ΔcardPts=+10, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +7.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +7.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[10]-3 (Active card: 10   Tokens on card: 3   Deck left: 17)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17 | 29                cardPts= 54  score=  26
+>[1] Player1     tokens= 2  cards=14 | 33                    cardPts= 47  score=  45
+ [2] Player2     tokens= 0  cards=3                          cardPts=  3  score=   3
+========================================================================
+
+========================================================================
+[10]-4 (Active card: 10   Tokens on card: 4   Deck left: 17)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17 | 29                cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33                    cardPts= 47  score=  46
+>[2] Player2     tokens= 0  cards=3                          cardPts=  3  score=   3
+========================================================================
+Player2 has 0 tokens -> forced TAKE.
+
+========================================================================
+[35]-0 (Active card: 35   Tokens on card: 0   Deck left: 16)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17 | 29                cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33                    cardPts= 47  score=  46
+>[2] Player2     tokens= 4  cards=3 | 10                     cardPts= 13  score=   9
+========================================================================
+
+========================================================================
+[35]-1 (Active card: 35   Tokens on card: 1   Deck left: 16)
+------------------------------------------------------------------------
+>[0] YOU         tokens=28  cards=8 | 17 | 29                cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33                    cardPts= 47  score=  46
+ [2] Player2     tokens= 3  cards=3 | 10                     cardPts= 13  score=  10
+========================================================================
+(info) If TAKE now: Δscore = +34 (ΔcardPts=+35, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +33.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +33.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[35]-2 (Active card: 35   Tokens on card: 2   Deck left: 16)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=8 | 17 | 29                cardPts= 54  score=  27
+>[1] Player1     tokens= 1  cards=14 | 33                    cardPts= 47  score=  46
+ [2] Player2     tokens= 3  cards=3 | 10                     cardPts= 13  score=  10
+========================================================================
+
+========================================================================
+[35]-3 (Active card: 35   Tokens on card: 3   Deck left: 16)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=8 | 17 | 29                cardPts= 54  score=  27
+ [1] Player1     tokens= 0  cards=14 | 33                    cardPts= 47  score=  47
+>[2] Player2     tokens= 3  cards=3 | 10                     cardPts= 13  score=  10
+========================================================================
+
+========================================================================
+[35]-4 (Active card: 35   Tokens on card: 4   Deck left: 16)
+------------------------------------------------------------------------
+>[0] YOU         tokens=27  cards=8 | 17 | 29                cardPts= 54  score=  27
+ [1] Player1     tokens= 0  cards=14 | 33                    cardPts= 47  score=  47
+ [2] Player2     tokens= 2  cards=3 | 10                     cardPts= 13  score=  11
+========================================================================
+(info) If TAKE now: Δscore = +31 (ΔcardPts=+35, tokens_on_card=4).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +30.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +30.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[35]-5 (Active card: 35   Tokens on card: 5   Deck left: 16)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17 | 29                cardPts= 54  score=  28
+>[1] Player1     tokens= 0  cards=14 | 33                    cardPts= 47  score=  47
+ [2] Player2     tokens= 2  cards=3 | 10                     cardPts= 13  score=  11
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[18]-0 (Active card: 18   Tokens on card: 0   Deck left: 15)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17 | 29                cardPts= 54  score=  28
+>[1] Player1     tokens= 5  cards=14 | 33 | 35               cardPts= 82  score=  77
+ [2] Player2     tokens= 2  cards=3 | 10                     cardPts= 13  score=  11
+========================================================================
+
+========================================================================
+[18]-1 (Active card: 18   Tokens on card: 1   Deck left: 15)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17 | 29                cardPts= 54  score=  28
+ [1] Player1     tokens= 4  cards=14 | 33 | 35               cardPts= 82  score=  78
+>[2] Player2     tokens= 2  cards=3 | 10                     cardPts= 13  score=  11
+========================================================================
+
+========================================================================
+[18]-2 (Active card: 18   Tokens on card: 2   Deck left: 15)
+------------------------------------------------------------------------
+>[0] YOU         tokens=26  cards=8 | 17 | 29                cardPts= 54  score=  28
+ [1] Player1     tokens= 4  cards=14 | 33 | 35               cardPts= 82  score=  78
+ [2] Player2     tokens= 1  cards=3 | 10                     cardPts= 13  score=  12
+========================================================================
+(info) If TAKE now: Δscore = -2 (ΔcardPts=+0, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +15.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +15.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[18]-3 (Active card: 18   Tokens on card: 3   Deck left: 15)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=8 | 17 | 29                cardPts= 54  score=  29
+>[1] Player1     tokens= 4  cards=14 | 33 | 35               cardPts= 82  score=  78
+ [2] Player2     tokens= 1  cards=3 | 10                     cardPts= 13  score=  12
+========================================================================
+
+========================================================================
+[18]-4 (Active card: 18   Tokens on card: 4   Deck left: 15)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=8 | 17 | 29                cardPts= 54  score=  29
+ [1] Player1     tokens= 3  cards=14 | 33 | 35               cardPts= 82  score=  79
+>[2] Player2     tokens= 1  cards=3 | 10                     cardPts= 13  score=  12
+========================================================================
+
+========================================================================
+[18]-5 (Active card: 18   Tokens on card: 5   Deck left: 15)
+------------------------------------------------------------------------
+>[0] YOU         tokens=25  cards=8 | 17 | 29                cardPts= 54  score=  29
+ [1] Player1     tokens= 3  cards=14 | 33 | 35               cardPts= 82  score=  79
+ [2] Player2     tokens= 0  cards=3 | 10                     cardPts= 13  score=  13
+========================================================================
+(info) If TAKE now: Δscore = -5 (ΔcardPts=+0, tokens_on_card=5).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +12.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +12.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[20]-0 (Active card: 20   Tokens on card: 0   Deck left: 14)
+------------------------------------------------------------------------
+>[0] YOU         tokens=30  cards=8 | 17-18 | 29             cardPts= 54  score=  24
+ [1] Player1     tokens= 3  cards=14 | 33 | 35               cardPts= 82  score=  79
+ [2] Player2     tokens= 0  cards=3 | 10                     cardPts= 13  score=  13
+========================================================================
+(info) If TAKE now: Δscore = +20 (ΔcardPts=+20, tokens_on_card=0).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +19.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +19.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[20]-1 (Active card: 20   Tokens on card: 1   Deck left: 14)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17-18 | 29             cardPts= 54  score=  25
+>[1] Player1     tokens= 3  cards=14 | 33 | 35               cardPts= 82  score=  79
+ [2] Player2     tokens= 0  cards=3 | 10                     cardPts= 13  score=  13
+========================================================================
+
+========================================================================
+[20]-2 (Active card: 20   Tokens on card: 2   Deck left: 14)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17-18 | 29             cardPts= 54  score=  25
+ [1] Player1     tokens= 2  cards=14 | 33 | 35               cardPts= 82  score=  80
+>[2] Player2     tokens= 0  cards=3 | 10                     cardPts= 13  score=  13
+========================================================================
+Player2 has 0 tokens -> forced TAKE.
+
+========================================================================
+[21]-0 (Active card: 21   Tokens on card: 0   Deck left: 13)
+------------------------------------------------------------------------
+ [0] YOU         tokens=29  cards=8 | 17-18 | 29             cardPts= 54  score=  25
+ [1] Player1     tokens= 2  cards=14 | 33 | 35               cardPts= 82  score=  80
+>[2] Player2     tokens= 2  cards=3 | 10 | 20                cardPts= 33  score=  31
+========================================================================
+
+========================================================================
+[21]-1 (Active card: 21   Tokens on card: 1   Deck left: 13)
+------------------------------------------------------------------------
+>[0] YOU         tokens=29  cards=8 | 17-18 | 29             cardPts= 54  score=  25
+ [1] Player1     tokens= 2  cards=14 | 33 | 35               cardPts= 82  score=  80
+ [2] Player2     tokens= 1  cards=3 | 10 | 20                cardPts= 33  score=  32
+========================================================================
+(info) If TAKE now: Δscore = +20 (ΔcardPts=+21, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +19.
+(info) If PASS and Player2 TAKES: Player2 Δscore = -2.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[21]-2 (Active card: 21   Tokens on card: 2   Deck left: 13)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17-18 | 29             cardPts= 54  score=  26
+>[1] Player1     tokens= 2  cards=14 | 33 | 35               cardPts= 82  score=  80
+ [2] Player2     tokens= 1  cards=3 | 10 | 20                cardPts= 33  score=  32
+========================================================================
+
+========================================================================
+[21]-3 (Active card: 21   Tokens on card: 3   Deck left: 13)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17-18 | 29             cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33 | 35               cardPts= 82  score=  81
+>[2] Player2     tokens= 1  cards=3 | 10 | 20                cardPts= 33  score=  32
+========================================================================
+
+========================================================================
+[27]-0 (Active card: 27   Tokens on card: 0   Deck left: 12)
+------------------------------------------------------------------------
+ [0] YOU         tokens=28  cards=8 | 17-18 | 29             cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33 | 35               cardPts= 82  score=  81
+>[2] Player2     tokens= 4  cards=3 | 10 | 20-21             cardPts= 33  score=  29
+========================================================================
+
+========================================================================
+[27]-1 (Active card: 27   Tokens on card: 1   Deck left: 12)
+------------------------------------------------------------------------
+>[0] YOU         tokens=28  cards=8 | 17-18 | 29             cardPts= 54  score=  26
+ [1] Player1     tokens= 1  cards=14 | 33 | 35               cardPts= 82  score=  81
+ [2] Player2     tokens= 3  cards=3 | 10 | 20-21             cardPts= 33  score=  30
+========================================================================
+(info) If TAKE now: Δscore = +26 (ΔcardPts=+27, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +25.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +25.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[27]-2 (Active card: 27   Tokens on card: 2   Deck left: 12)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=8 | 17-18 | 29             cardPts= 54  score=  27
+>[1] Player1     tokens= 1  cards=14 | 33 | 35               cardPts= 82  score=  81
+ [2] Player2     tokens= 3  cards=3 | 10 | 20-21             cardPts= 33  score=  30
+========================================================================
+
+========================================================================
+[27]-3 (Active card: 27   Tokens on card: 3   Deck left: 12)
+------------------------------------------------------------------------
+ [0] YOU         tokens=27  cards=8 | 17-18 | 29             cardPts= 54  score=  27
+ [1] Player1     tokens= 0  cards=14 | 33 | 35               cardPts= 82  score=  82
+>[2] Player2     tokens= 3  cards=3 | 10 | 20-21             cardPts= 33  score=  30
+========================================================================
+
+========================================================================
+[27]-4 (Active card: 27   Tokens on card: 4   Deck left: 12)
+------------------------------------------------------------------------
+>[0] YOU         tokens=27  cards=8 | 17-18 | 29             cardPts= 54  score=  27
+ [1] Player1     tokens= 0  cards=14 | 33 | 35               cardPts= 82  score=  82
+ [2] Player2     tokens= 2  cards=3 | 10 | 20-21             cardPts= 33  score=  31
+========================================================================
+(info) If TAKE now: Δscore = +23 (ΔcardPts=+27, tokens_on_card=4).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +22.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +22.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[27]-5 (Active card: 27   Tokens on card: 5   Deck left: 12)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17-18 | 29             cardPts= 54  score=  28
+>[1] Player1     tokens= 0  cards=14 | 33 | 35               cardPts= 82  score=  82
+ [2] Player2     tokens= 2  cards=3 | 10 | 20-21             cardPts= 33  score=  31
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[31]-0 (Active card: 31   Tokens on card: 0   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17-18 | 29             cardPts= 54  score=  28
+>[1] Player1     tokens= 5  cards=14 | 27 | 33 | 35          cardPts=109  score= 104
+ [2] Player2     tokens= 2  cards=3 | 10 | 20-21             cardPts= 33  score=  31
+========================================================================
+
+========================================================================
+[31]-1 (Active card: 31   Tokens on card: 1   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=8 | 17-18 | 29             cardPts= 54  score=  28
+ [1] Player1     tokens= 4  cards=14 | 27 | 33 | 35          cardPts=109  score= 105
+>[2] Player2     tokens= 2  cards=3 | 10 | 20-21             cardPts= 33  score=  31
+========================================================================
+
+========================================================================
+[31]-2 (Active card: 31   Tokens on card: 2   Deck left: 11)
+------------------------------------------------------------------------
+>[0] YOU         tokens=26  cards=8 | 17-18 | 29             cardPts= 54  score=  28
+ [1] Player1     tokens= 4  cards=14 | 27 | 33 | 35          cardPts=109  score= 105
+ [2] Player2     tokens= 1  cards=3 | 10 | 20-21             cardPts= 33  score=  32
+========================================================================
+(info) If TAKE now: Δscore = +29 (ΔcardPts=+31, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +28.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +28.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[31]-3 (Active card: 31   Tokens on card: 3   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=8 | 17-18 | 29             cardPts= 54  score=  29
+>[1] Player1     tokens= 4  cards=14 | 27 | 33 | 35          cardPts=109  score= 105
+ [2] Player2     tokens= 1  cards=3 | 10 | 20-21             cardPts= 33  score=  32
+========================================================================
+
+========================================================================
+[31]-4 (Active card: 31   Tokens on card: 4   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=8 | 17-18 | 29             cardPts= 54  score=  29
+ [1] Player1     tokens= 3  cards=14 | 27 | 33 | 35          cardPts=109  score= 106
+>[2] Player2     tokens= 1  cards=3 | 10 | 20-21             cardPts= 33  score=  32
+========================================================================
+
+========================================================================
+[31]-5 (Active card: 31   Tokens on card: 5   Deck left: 11)
+------------------------------------------------------------------------
+>[0] YOU         tokens=25  cards=8 | 17-18 | 29             cardPts= 54  score=  29
+ [1] Player1     tokens= 3  cards=14 | 27 | 33 | 35          cardPts=109  score= 106
+ [2] Player2     tokens= 0  cards=3 | 10 | 20-21             cardPts= 33  score=  33
+========================================================================
+(info) If TAKE now: Δscore = +26 (ΔcardPts=+31, tokens_on_card=5).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +25.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +25.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[31]-6 (Active card: 31   Tokens on card: 6   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=8 | 17-18 | 29             cardPts= 54  score=  30
+>[1] Player1     tokens= 3  cards=14 | 27 | 33 | 35          cardPts=109  score= 106
+ [2] Player2     tokens= 0  cards=3 | 10 | 20-21             cardPts= 33  score=  33
+========================================================================
+
+========================================================================
+[31]-7 (Active card: 31   Tokens on card: 7   Deck left: 11)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=8 | 17-18 | 29             cardPts= 54  score=  30
+ [1] Player1     tokens= 2  cards=14 | 27 | 33 | 35          cardPts=109  score= 107
+>[2] Player2     tokens= 0  cards=3 | 10 | 20-21             cardPts= 33  score=  33
+========================================================================
+Player2 has 0 tokens -> forced TAKE.
+
+========================================================================
+[7]-0 (Active card: 7   Tokens on card: 0   Deck left: 10)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=8 | 17-18 | 29             cardPts= 54  score=  30
+ [1] Player1     tokens= 2  cards=14 | 27 | 33 | 35          cardPts=109  score= 107
+>[2] Player2     tokens= 7  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  57
+========================================================================
+
+========================================================================
+[7]-1 (Active card: 7   Tokens on card: 1   Deck left: 10)
+------------------------------------------------------------------------
+>[0] YOU         tokens=24  cards=8 | 17-18 | 29             cardPts= 54  score=  30
+ [1] Player1     tokens= 2  cards=14 | 27 | 33 | 35          cardPts=109  score= 107
+ [2] Player2     tokens= 6  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  58
+========================================================================
+(info) If TAKE now: Δscore = -2 (ΔcardPts=-1, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +5.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +5.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[7]-2 (Active card: 7   Tokens on card: 2   Deck left: 10)
+------------------------------------------------------------------------
+ [0] YOU         tokens=23  cards=8 | 17-18 | 29             cardPts= 54  score=  31
+>[1] Player1     tokens= 2  cards=14 | 27 | 33 | 35          cardPts=109  score= 107
+ [2] Player2     tokens= 6  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  58
+========================================================================
+
+========================================================================
+[7]-3 (Active card: 7   Tokens on card: 3   Deck left: 10)
+------------------------------------------------------------------------
+ [0] YOU         tokens=23  cards=8 | 17-18 | 29             cardPts= 54  score=  31
+ [1] Player1     tokens= 1  cards=14 | 27 | 33 | 35          cardPts=109  score= 108
+>[2] Player2     tokens= 6  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  58
+========================================================================
+
+========================================================================
+[7]-4 (Active card: 7   Tokens on card: 4   Deck left: 10)
+------------------------------------------------------------------------
+>[0] YOU         tokens=23  cards=8 | 17-18 | 29             cardPts= 54  score=  31
+ [1] Player1     tokens= 1  cards=14 | 27 | 33 | 35          cardPts=109  score= 108
+ [2] Player2     tokens= 5  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  59
+========================================================================
+(info) If TAKE now: Δscore = -5 (ΔcardPts=-1, tokens_on_card=4).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +2.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +2.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[4]-0 (Active card: 4   Tokens on card: 0   Deck left: 9)
+------------------------------------------------------------------------
+>[0] YOU         tokens=27  cards=7-8 | 17-18 | 29           cardPts= 53  score=  26
+ [1] Player1     tokens= 1  cards=14 | 27 | 33 | 35          cardPts=109  score= 108
+ [2] Player2     tokens= 5  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  59
+========================================================================
+(info) If TAKE now: Δscore = +4 (ΔcardPts=+4, tokens_on_card=0).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +3.
+(info) If PASS and Player2 TAKES: Player2 Δscore = -1.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[4]-1 (Active card: 4   Tokens on card: 1   Deck left: 9)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=7-8 | 17-18 | 29           cardPts= 53  score=  27
+>[1] Player1     tokens= 1  cards=14 | 27 | 33 | 35          cardPts=109  score= 108
+ [2] Player2     tokens= 5  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  59
+========================================================================
+
+========================================================================
+[4]-2 (Active card: 4   Tokens on card: 2   Deck left: 9)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=7-8 | 17-18 | 29           cardPts= 53  score=  27
+ [1] Player1     tokens= 0  cards=14 | 27 | 33 | 35          cardPts=109  score= 109
+>[2] Player2     tokens= 5  cards=3 | 10 | 20-21 | 31        cardPts= 64  score=  59
+========================================================================
+
+========================================================================
+[9]-0 (Active card: 9   Tokens on card: 0   Deck left: 8)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=7-8 | 17-18 | 29           cardPts= 53  score=  27
+ [1] Player1     tokens= 0  cards=14 | 27 | 33 | 35          cardPts=109  score= 109
+>[2] Player2     tokens= 7  cards=3-4 | 10 | 20-21 | 31      cardPts= 64  score=  57
+========================================================================
+
+========================================================================
+[24]-0 (Active card: 24   Tokens on card: 0   Deck left: 7)
+------------------------------------------------------------------------
+ [0] YOU         tokens=26  cards=7-8 | 17-18 | 29           cardPts= 53  score=  27
+ [1] Player1     tokens= 0  cards=14 | 27 | 33 | 35          cardPts=109  score= 109
+>[2] Player2     tokens= 7  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+
+========================================================================
+[24]-1 (Active card: 24   Tokens on card: 1   Deck left: 7)
+------------------------------------------------------------------------
+>[0] YOU         tokens=26  cards=7-8 | 17-18 | 29           cardPts= 53  score=  27
+ [1] Player1     tokens= 0  cards=14 | 27 | 33 | 35          cardPts=109  score= 109
+ [2] Player2     tokens= 6  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  57
+========================================================================
+(info) If TAKE now: Δscore = +23 (ΔcardPts=+24, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +22.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +22.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[24]-2 (Active card: 24   Tokens on card: 2   Deck left: 7)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=7-8 | 17-18 | 29           cardPts= 53  score=  28
+>[1] Player1     tokens= 0  cards=14 | 27 | 33 | 35          cardPts=109  score= 109
+ [2] Player2     tokens= 6  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  57
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[11]-0 (Active card: 11   Tokens on card: 0   Deck left: 6)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=7-8 | 17-18 | 29           cardPts= 53  score=  28
+>[1] Player1     tokens= 2  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 131
+ [2] Player2     tokens= 6  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  57
+========================================================================
+
+========================================================================
+[11]-1 (Active card: 11   Tokens on card: 1   Deck left: 6)
+------------------------------------------------------------------------
+ [0] YOU         tokens=25  cards=7-8 | 17-18 | 29           cardPts= 53  score=  28
+ [1] Player1     tokens= 1  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 132
+>[2] Player2     tokens= 6  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  57
+========================================================================
+
+========================================================================
+[11]-2 (Active card: 11   Tokens on card: 2   Deck left: 6)
+------------------------------------------------------------------------
+>[0] YOU         tokens=25  cards=7-8 | 17-18 | 29           cardPts= 53  score=  28
+ [1] Player1     tokens= 1  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 132
+ [2] Player2     tokens= 5  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  58
+========================================================================
+(info) If TAKE now: Δscore = +9 (ΔcardPts=+11, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +8.
+(info) If PASS and Player2 TAKES: Player2 Δscore = -3.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[11]-3 (Active card: 11   Tokens on card: 3   Deck left: 6)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=7-8 | 17-18 | 29           cardPts= 53  score=  29
+>[1] Player1     tokens= 1  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 132
+ [2] Player2     tokens= 5  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  58
+========================================================================
+
+========================================================================
+[11]-4 (Active card: 11   Tokens on card: 4   Deck left: 6)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=7-8 | 17-18 | 29           cardPts= 53  score=  29
+ [1] Player1     tokens= 0  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 133
+>[2] Player2     tokens= 5  cards=3-4 | 9-10 | 20-21 | 31    cardPts= 63  score=  58
+========================================================================
+
+========================================================================
+[15]-0 (Active card: 15   Tokens on card: 0   Deck left: 5)
+------------------------------------------------------------------------
+ [0] YOU         tokens=24  cards=7-8 | 17-18 | 29           cardPts= 53  score=  29
+ [1] Player1     tokens= 0  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 133
+>[2] Player2     tokens= 9  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  54
+========================================================================
+
+========================================================================
+[15]-1 (Active card: 15   Tokens on card: 1   Deck left: 5)
+------------------------------------------------------------------------
+>[0] YOU         tokens=24  cards=7-8 | 17-18 | 29           cardPts= 53  score=  29
+ [1] Player1     tokens= 0  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 133
+ [2] Player2     tokens= 8  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+(info) If TAKE now: Δscore = +14 (ΔcardPts=+15, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = -2.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +13.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[15]-2 (Active card: 15   Tokens on card: 2   Deck left: 5)
+------------------------------------------------------------------------
+ [0] YOU         tokens=23  cards=7-8 | 17-18 | 29           cardPts= 53  score=  30
+>[1] Player1     tokens= 0  cards=14 | 24 | 27 | 33 | 35     cardPts=133  score= 133
+ [2] Player2     tokens= 8  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[12]-0 (Active card: 12   Tokens on card: 0   Deck left: 4)
+------------------------------------------------------------------------
+ [0] YOU         tokens=23  cards=7-8 | 17-18 | 29           cardPts= 53  score=  30
+>[1] Player1     tokens= 2  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 131
+ [2] Player2     tokens= 8  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+
+========================================================================
+[12]-1 (Active card: 12   Tokens on card: 1   Deck left: 4)
+------------------------------------------------------------------------
+ [0] YOU         tokens=23  cards=7-8 | 17-18 | 29           cardPts= 53  score=  30
+ [1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 132
+>[2] Player2     tokens= 8  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+
+========================================================================
+[12]-2 (Active card: 12   Tokens on card: 2   Deck left: 4)
+------------------------------------------------------------------------
+>[0] YOU         tokens=23  cards=7-8 | 17-18 | 29           cardPts= 53  score=  30
+ [1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 132
+ [2] Player2     tokens= 7  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+(info) If TAKE now: Δscore = +10 (ΔcardPts=+12, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +9.
+(info) If PASS and Player2 TAKES: Player2 Δscore = -3.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[12]-3 (Active card: 12   Tokens on card: 3   Deck left: 4)
+------------------------------------------------------------------------
+ [0] YOU         tokens=22  cards=7-8 | 17-18 | 29           cardPts= 53  score=  31
+>[1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 132
+ [2] Player2     tokens= 7  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+
+========================================================================
+[12]-4 (Active card: 12   Tokens on card: 4   Deck left: 4)
+------------------------------------------------------------------------
+ [0] YOU         tokens=22  cards=7-8 | 17-18 | 29           cardPts= 53  score=  31
+ [1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 133
+>[2] Player2     tokens= 7  cards=3-4 | 9-11 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+
+========================================================================
+[34]-0 (Active card: 34   Tokens on card: 0   Deck left: 3)
+------------------------------------------------------------------------
+ [0] YOU         tokens=22  cards=7-8 | 17-18 | 29           cardPts= 53  score=  31
+ [1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 133
+>[2] Player2     tokens=11  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  52
+========================================================================
+
+========================================================================
+[34]-1 (Active card: 34   Tokens on card: 1   Deck left: 3)
+------------------------------------------------------------------------
+>[0] YOU         tokens=22  cards=7-8 | 17-18 | 29           cardPts= 53  score=  31
+ [1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 133
+ [2] Player2     tokens=10  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+(info) If TAKE now: Δscore = +33 (ΔcardPts=+34, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = -37.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +32.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[34]-2 (Active card: 34   Tokens on card: 2   Deck left: 3)
+------------------------------------------------------------------------
+ [0] YOU         tokens=21  cards=7-8 | 17-18 | 29           cardPts= 53  score=  32
+>[1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33 | 35  cardPts=133  score= 133
+ [2] Player2     tokens=10  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[25]-0 (Active card: 25   Tokens on card: 0   Deck left: 2)
+------------------------------------------------------------------------
+ [0] YOU         tokens=21  cards=7-8 | 17-18 | 29           cardPts= 53  score=  32
+>[1] Player1     tokens= 2  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  96
+ [2] Player2     tokens=10  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+
+========================================================================
+[25]-1 (Active card: 25   Tokens on card: 1   Deck left: 2)
+------------------------------------------------------------------------
+ [0] YOU         tokens=21  cards=7-8 | 17-18 | 29           cardPts= 53  score=  32
+ [1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  97
+>[2] Player2     tokens=10  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+
+========================================================================
+[25]-2 (Active card: 25   Tokens on card: 2   Deck left: 2)
+------------------------------------------------------------------------
+>[0] YOU         tokens=21  cards=7-8 | 17-18 | 29           cardPts= 53  score=  32
+ [1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  97
+ [2] Player2     tokens= 9  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  54
+========================================================================
+(info) If TAKE now: Δscore = +23 (ΔcardPts=+25, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = -3.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +22.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[25]-3 (Active card: 25   Tokens on card: 3   Deck left: 2)
+------------------------------------------------------------------------
+ [0] YOU         tokens=20  cards=7-8 | 17-18 | 29           cardPts= 53  score=  33
+>[1] Player1     tokens= 1  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  97
+ [2] Player2     tokens= 9  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  54
+========================================================================
+
+========================================================================
+[25]-4 (Active card: 25   Tokens on card: 4   Deck left: 2)
+------------------------------------------------------------------------
+ [0] YOU         tokens=20  cards=7-8 | 17-18 | 29           cardPts= 53  score=  33
+ [1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  98
+>[2] Player2     tokens= 9  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  54
+========================================================================
+
+========================================================================
+[25]-5 (Active card: 25   Tokens on card: 5   Deck left: 2)
+------------------------------------------------------------------------
+>[0] YOU         tokens=20  cards=7-8 | 17-18 | 29           cardPts= 53  score=  33
+ [1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  98
+ [2] Player2     tokens= 8  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+(info) If TAKE now: Δscore = +20 (ΔcardPts=+25, tokens_on_card=5).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = -6.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +19.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[25]-6 (Active card: 25   Tokens on card: 6   Deck left: 2)
+------------------------------------------------------------------------
+ [0] YOU         tokens=19  cards=7-8 | 17-18 | 29           cardPts= 53  score=  34
+>[1] Player1     tokens= 0  cards=14-15 | 24 | 27 | 33-35    cardPts= 98  score=  98
+ [2] Player2     tokens= 8  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+Player1 has 0 tokens -> forced TAKE.
+
+========================================================================
+[5]-0 (Active card: 5   Tokens on card: 0   Deck left: 1)
+------------------------------------------------------------------------
+ [0] YOU         tokens=19  cards=7-8 | 17-18 | 29           cardPts= 53  score=  34
+>[1] Player1     tokens= 6  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  92
+ [2] Player2     tokens= 8  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+
+========================================================================
+[5]-1 (Active card: 5   Tokens on card: 1   Deck left: 1)
+------------------------------------------------------------------------
+ [0] YOU         tokens=19  cards=7-8 | 17-18 | 29           cardPts= 53  score=  34
+ [1] Player1     tokens= 5  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  93
+>[2] Player2     tokens= 8  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  55
+========================================================================
+
+========================================================================
+[5]-2 (Active card: 5   Tokens on card: 2   Deck left: 1)
+------------------------------------------------------------------------
+>[0] YOU         tokens=19  cards=7-8 | 17-18 | 29           cardPts= 53  score=  34
+ [1] Player1     tokens= 5  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  93
+ [2] Player2     tokens= 7  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+(info) If TAKE now: Δscore = +3 (ΔcardPts=+5, tokens_on_card=2).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = +2.
+(info) If PASS and Player2 TAKES: Player2 Δscore = -3.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > 
+
+========================================================================
+[5]-3 (Active card: 5   Tokens on card: 3   Deck left: 1)
+------------------------------------------------------------------------
+ [0] YOU         tokens=18  cards=7-8 | 17-18 | 29           cardPts= 53  score=  35
+>[1] Player1     tokens= 5  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  93
+ [2] Player2     tokens= 7  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+
+========================================================================
+[5]-4 (Active card: 5   Tokens on card: 4   Deck left: 1)
+------------------------------------------------------------------------
+ [0] YOU         tokens=18  cards=7-8 | 17-18 | 29           cardPts= 53  score=  35
+ [1] Player1     tokens= 4  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  94
+>[2] Player2     tokens= 7  cards=3-4 | 9-12 | 20-21 | 31    cardPts= 63  score=  56
+========================================================================
+
+========================================================================
+[16]-0 (Active card: 16   Tokens on card: 0   Deck left: 0)
+------------------------------------------------------------------------
+ [0] YOU         tokens=18  cards=7-8 | 17-18 | 29           cardPts= 53  score=  35
+ [1] Player1     tokens= 4  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  94
+>[2] Player2     tokens=11  cards=3-5 | 9-12 | 20-21 | 31    cardPts= 63  score=  52
+========================================================================
+
+========================================================================
+[16]-1 (Active card: 16   Tokens on card: 1   Deck left: 0)
+------------------------------------------------------------------------
+>[0] YOU         tokens=18  cards=7-8 | 17-18 | 29           cardPts= 53  score=  35
+ [1] Player1     tokens= 4  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  94
+ [2] Player2     tokens=10  cards=3-5 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+(info) If TAKE now: Δscore = -2 (ΔcardPts=-1, tokens_on_card=1).
+(info) If PASS now: Δscore = +1 (spend 1 token).
+(info) If PASS and Player1 TAKES: Player1 Δscore = -2.
+(info) If PASS and Player2 TAKES: Player2 Δscore = +14.
+Your move: [t]ake / [p]ass (default: pass) / [?]help > t
+
+========================================================================
+[-]-0 (Active card: -   Tokens on card: 0   Deck left: 0)
+------------------------------------------------------------------------
+>[0] YOU         tokens=19  cards=7-8 | 16-18 | 29           cardPts= 52  score=  33
+ [1] Player1     tokens= 4  cards=14-15 | 24-25 | 27 | 33-35  cardPts= 98  score=  94
+ [2] Player2     tokens=10  cards=3-5 | 9-12 | 20-21 | 31    cardPts= 63  score=  53
+========================================================================
+
+FINAL RESULTS
+ 1. YOU        score=  33  cardPts= 52  tokens=19  cards=7-8 | 16-18 | 29
+ 2. Player2    score=  53  cardPts= 63  tokens=10  cards=3-5 | 9-12 | 20-21 | 31
+ 3. Player1    score=  94  cardPts= 98  tokens= 4  cards=14-15 | 24-25 | 27 | 33-35
+Winner: YOU

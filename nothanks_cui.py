@@ -236,6 +236,10 @@ class HeuristicParams:
     milk_opp_want_threshold: float = 0.0
     milk_min_opp_tokens: int = 1
 
+HEURISTIC_V2_PARAMS = HeuristicParams(
+    milk_max_tokens_on_card=9,
+)
+
 class HeuristicAI(Agent):
     """
     A compact rule-based AI.
@@ -306,7 +310,7 @@ class HeuristicAI(Agent):
         return "take" if my_take_cost <= th else "pass"
 
 
-AI_CHOICES = ("random", "greedy", "heuristic")
+AI_CHOICES = ("random", "greedy", "heuristic", "heuristic2")
 
 def make_ai(ai_type: str, name: str) -> Agent:
     ai_type = ai_type.lower()
@@ -316,6 +320,8 @@ def make_ai(ai_type: str, name: str) -> Agent:
         return GreedyAI(name)
     if ai_type == "heuristic":
         return HeuristicAI(name)
+    if ai_type == "heuristic2":
+        return HeuristicAI(name, params=HEURISTIC_V2_PARAMS)
     raise ValueError(f"Unknown AI type: {ai_type}")
 
 

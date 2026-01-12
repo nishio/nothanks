@@ -68,10 +68,21 @@ python nothanks_cui.py simulate --games 50 --verbose
   - 終盤は少しTake寄り
   - トップ争い（近い点差）では相対スイングを見てTakeすることがある
   - 自分に良いカードを安全っぽいなら1回だけ回してチップを乗せる（milking）ことがある
+- `lr1`：人間ログから学習したロジスティック回帰（確率的に行動）
+- `lr2`：勝ちログのみで学習したロジスティック回帰（確率的に行動）
 
 ## パラメータ調整
 
 スクリプト内の `HeuristicParams` を編集するとすぐ反映されます。
+
+## 学習モデルの作成
+
+ログから学習モデルを作るには `scripts/train_lr.py` を使います。
+
+```bash
+python scripts/train_lr.py --out models/lr1.json
+python scripts/train_lr.py --out models/lr2.json --winner-only
+```
 
 ## ドキュメント
 

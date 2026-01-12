@@ -18,6 +18,8 @@ This file is intentionally compact and hackable.
 from __future__ import annotations
 
 import argparse
+import json
+import math
 import random
 import statistics
 from datetime import datetime
@@ -73,6 +75,148 @@ def marginal_card_points(cards: Set[int], new_card: int) -> int:
     before = score_cards(cards)
     after = score_cards(set(cards) | {new_card})
     return after - before
+
+
+ALL_CARDS = set(range(3, 36))
+
+FEATURE_NAMES = (
+    "take_cost",
+    "take_delta_cardpts",
+    "tokens_on_card",
+    "tokens_on_card_plus1",
+    "deck_left",
+    "my_tokens",
+    "min_opp_tokens",
+    "max_opp_tokens",
+    "mean_opp_tokens",
+    "token_gap",
+    "min_tokens_after_pass",
+    "max_tokens_after_pass",
+    "token_gap_after_pass",
+    "would_be_min_tokens",
+    "my_score",
+    "min_opp_score",
+    "score_gap_to_leader",
+    "score_gap_to_leader_norm",
+    "has_cards",
+    "edges_unknown_self",
+    "edges_unknown_self_mul_deck",
+    "edges_unknown_opp_min",
+    "edges_unknown_opp_max",
+    "edges_unknown_opp_mean",
+    "lowtoken_term",
+    "endgame_frac",
+)
+
+
+def runs_list(cards: Set[int]) -> List[Tuple[int, int]]:
+    if not cards:
+        return []
+    arr = sorted(cards)
+    runs: List[Tuple[int, int]] = []
+    start = prev = arr[0]
+    for x in arr[1:]:
+        if x == prev + 1:
+            prev = x
+        else:
+            runs.append((start, prev))
+            start = prev = x
+    runs.append((start, prev))
+    return runs
+
+
+def count_run_edge_unknown(cards: Set[int], unknown: Set[int]) -> int:
+    edges = set()
+    for a, b in runs_list(cards):
+        if a - 1 >= 3:
+            edges.add(a - 1)
+        if b + 1 <= 35:
+            edges.add(b + 1)
+    return sum(1 for e in edges if e in unknown)
+
+
+def extract_features(
+    players: List["PlayerState"],
+    active_card: Optional[int],
+    tokens_on_card: int,
+    deck_left: int,
+    idx: int,
+) -> List[float]:
+    me = players[idx]
+    opps = [p for i, p in enumerate(players) if i != idx]
+
+    known = set()
+    for p in players:
+        known |= p.cards
+    if active_card is not None:
+        known.add(active_card)
+    unknown = ALL_CARDS - known
+
+    take_delta_cardpts = 0
+    if active_card is not None:
+        take_delta_cardpts = marginal_card_points(me.cards, active_card)
+    take_cost = take_delta_cardpts - tokens_on_card
+
+    tokens = [p.tokens for p in players]
+    opp_tokens = [p.tokens for p in opps] if opps else [0]
+    min_opp_tokens = min(opp_tokens)
+    max_opp_tokens = max(opp_tokens)
+    mean_opp_tokens = sum(opp_tokens) / len(opp_tokens)
+    token_gap = max(tokens) - min(tokens)
+
+    tokens_after_pass = tokens[:]
+    tokens_after_pass[idx] = tokens_after_pass[idx] - 1
+    min_tokens_after_pass = min(tokens_after_pass)
+    max_tokens_after_pass = max(tokens_after_pass)
+    token_gap_after_pass = max_tokens_after_pass - min_tokens_after_pass
+    would_be_min_tokens = (
+        1.0 if tokens_after_pass[idx] == min_tokens_after_pass else 0.0
+    )
+
+    scores = [score_player(p.cards, p.tokens) for p in players]
+    my_score = scores[idx]
+    min_opp_score = min(s for i, s in enumerate(scores) if i != idx)
+    score_gap_to_leader = my_score - min_opp_score
+    score_gap_to_leader_norm = score_gap_to_leader / max(deck_left, 1)
+
+    edges_unknown_self = count_run_edge_unknown(me.cards, unknown)
+    edges_unknown_self_mul_deck = edges_unknown_self * deck_left
+    edges_unknown_opps = [count_run_edge_unknown(p.cards, unknown) for p in opps]
+    edges_unknown_opp_min = min(edges_unknown_opps)
+    edges_unknown_opp_max = max(edges_unknown_opps)
+    edges_unknown_opp_mean = sum(edges_unknown_opps) / len(edges_unknown_opps)
+
+    lowtoken_term = 1.0 / (me.tokens + 1.0)
+    endgame_frac = 1.0 - (deck_left / 23.0 if 23.0 else 1.0)
+
+    return [
+        float(take_cost),
+        float(take_delta_cardpts),
+        float(tokens_on_card),
+        float(tokens_on_card + 1),
+        float(deck_left),
+        float(me.tokens),
+        float(min_opp_tokens),
+        float(max_opp_tokens),
+        float(mean_opp_tokens),
+        float(token_gap),
+        float(min_tokens_after_pass),
+        float(max_tokens_after_pass),
+        float(token_gap_after_pass),
+        float(would_be_min_tokens),
+        float(my_score),
+        float(min_opp_score),
+        float(score_gap_to_leader),
+        float(score_gap_to_leader_norm),
+        float(1.0 if me.cards else 0.0),
+        float(edges_unknown_self),
+        float(edges_unknown_self_mul_deck),
+        float(edges_unknown_opp_min),
+        float(edges_unknown_opp_max),
+        float(edges_unknown_opp_mean),
+        float(lowtoken_term),
+        float(endgame_frac),
+    ]
 
 
 # ---------------------------
@@ -354,7 +498,57 @@ class HeuristicAI(Agent):
         return "take" if my_take_cost <= th else "pass"
 
 
-AI_CHOICES = ("random", "greedy", "heuristic", "heuristic2")
+@dataclass
+class LogisticModel:
+    feature_names: List[str]
+    weights: List[float]
+    bias: float
+    mean: List[float]
+    std: List[float]
+
+    def predict_proba(self, features: List[float]) -> float:
+        z = self.bias
+        for w, x, m, s in zip(self.weights, features, self.mean, self.std):
+            if s == 0:
+                z += w * (x - m)
+            else:
+                z += w * ((x - m) / s)
+        if z >= 0:
+            return 1.0 / (1.0 + math.exp(-z))
+        exp_z = math.exp(z)
+        return exp_z / (1.0 + exp_z)
+
+
+def load_lr_model(model_path: Path) -> LogisticModel:
+    with model_path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+    feature_names = payload["feature_names"]
+    weights = payload["weights"]
+    bias = payload["bias"]
+    mean = payload["mean"]
+    std = payload["std"]
+    return LogisticModel(feature_names, weights, bias, mean, std)
+
+
+class LogisticAI(Agent):
+    def __init__(self, name: str, model_path: Path):
+        super().__init__(name)
+        if not model_path.exists():
+            raise ValueError(f"Model not found: {model_path}")
+        self.model = load_lr_model(model_path)
+
+    def choose(self, game: NoThanksGame, idx: int) -> str:
+        ps = game.players[idx]
+        if ps.tokens == 0:
+            return "take"
+        feats = extract_features(
+            game.players, game.active_card, game.tokens_on_card, game.remaining_draw(), idx
+        )
+        p_take = self.model.predict_proba(feats)
+        return "take" if game.rng.random() < p_take else "pass"
+
+
+AI_CHOICES = ("random", "greedy", "heuristic", "heuristic2", "lr1", "lr2", "lr_opt")
 
 
 def make_ai(ai_type: str, name: str) -> Agent:
@@ -367,6 +561,12 @@ def make_ai(ai_type: str, name: str) -> Agent:
         return HeuristicAI(name)
     if ai_type == "heuristic2":
         return HeuristicAI(name, params=HEURISTIC_V2_PARAMS)
+    if ai_type == "lr1":
+        return LogisticAI(name, model_path=Path("models/lr1.json"))
+    if ai_type == "lr2":
+        return LogisticAI(name, model_path=Path("models/lr2.json"))
+    if ai_type == "lr_opt":
+        return LogisticAI(name, model_path=Path("models/lr_opt.json"))
     raise ValueError(f"Unknown AI type: {ai_type}")
 
 

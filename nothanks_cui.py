@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 No Thanks! (Geschenkt) - CUI + simple rule-based AIs
@@ -31,6 +30,7 @@ from typing import List, Set, Optional, Dict, Tuple
 # Scoring helpers
 # ---------------------------
 
+
 def score_cards(cards: Set[int]) -> int:
     """Card points: sum of the lowest card in each consecutive run."""
     if not cards:
@@ -42,9 +42,11 @@ def score_cards(cards: Set[int]) -> int:
             total += c
     return total
 
+
 def score_player(cards: Set[int], tokens: int) -> int:
     """Total score (lower is better)."""
     return score_cards(cards) - tokens
+
 
 def runs_str(cards: Set[int]) -> str:
     """Pretty-print runs like '8 | 13-15 | 17'."""
@@ -65,6 +67,7 @@ def runs_str(cards: Set[int]) -> str:
         out.append(str(a) if a == b else f"{a}-{b}")
     return " | ".join(out)
 
+
 def marginal_card_points(cards: Set[int], new_card: int) -> int:
     """Delta of card-points if new_card is added."""
     before = score_cards(cards)
@@ -76,14 +79,17 @@ def marginal_card_points(cards: Set[int], new_card: int) -> int:
 # Core game engine
 # ---------------------------
 
+
 @dataclass
 class PlayerState:
     name: str
     tokens: int
     cards: Set[int] = field(default_factory=set)
 
+
 class NoThanksGame:
     """Engine for a single round."""
+
     def __init__(self, players: List[PlayerState], seed: Optional[int] = None):
         self.rng = random.Random(seed)
         self.players = players
@@ -116,8 +122,14 @@ class NoThanksGame:
         self.active_card = self.deck.pop(0)
         self.tokens_on_card = 0
 
-        self.current = self.rng.randrange(self.n) if start_player is None else (start_player % self.n)
-        self.log.append(f"Setup: active={self.active_card}, start={self.players[self.current].name}")
+        self.current = (
+            self.rng.randrange(self.n)
+            if start_player is None
+            else (start_player % self.n)
+        )
+        self.log.append(
+            f"Setup: active={self.active_card}, start={self.players[self.current].name}"
+        )
 
     def remaining_draw(self) -> int:
         return len(self.deck)
@@ -131,7 +143,9 @@ class NoThanksGame:
             raise RuntimeError("Cannot PASS with 0 tokens.")
         ps.tokens -= 1
         self.tokens_on_card += 1
-        self.log.append(f"{ps.name}: PASS (pays 1) -> tokens_on_card={self.tokens_on_card}")
+        self.log.append(
+            f"{ps.name}: PASS (pays 1) -> tokens_on_card={self.tokens_on_card}"
+        )
         self.current = (self.current + 1) % self.n
 
     def apply_take(self) -> None:
@@ -159,6 +173,7 @@ class NoThanksGame:
 # Agents (Human / AI)
 # ---------------------------
 
+
 class Agent:
     def __init__(self, name: str):
         self.name = name
@@ -166,6 +181,7 @@ class Agent:
     def choose(self, game: NoThanksGame, idx: int) -> str:
         """Return 'take' or 'pass'."""
         raise NotImplementedError
+
 
 class HumanCUI(Agent):
     def __init__(self, name: str, ui: "UILogger", show_math: bool = True):
@@ -184,16 +200,26 @@ class HumanCUI(Agent):
                 assert card is not None
                 take_delta = marginal_card_points(ps.cards, card)
                 take_cost = take_delta - game.tokens_on_card
-                self.ui.write(f"(info) If TAKE now: Δscore = {take_cost:+d} (ΔcardPts={take_delta:+d}, tokens_on_card={game.tokens_on_card}).")
+                self.ui.write(
+                    f"(info) If TAKE now: Δscore = {take_cost:+d} (ΔcardPts={take_delta:+d}, tokens_on_card={game.tokens_on_card})."
+                )
                 self.ui.write("(info) If PASS now: Δscore = +1 (spend 1 token).")
                 t_on_pass = game.tokens_on_card + 1
                 for j, opp in enumerate(game.players):
                     if j == idx:
                         continue
                     opp_take_cost = marginal_card_points(opp.cards, card) - t_on_pass
-                    self.ui.write(f"(info) If PASS and {opp.name} TAKES: {opp.name} Δscore = {opp_take_cost:+d}.")
+                    self.ui.write(
+                        f"(info) If PASS and {opp.name} TAKES: {opp.name} Δscore = {opp_take_cost:+d}."
+                    )
 
-            cmd = self.ui.prompt("Your move: [t]ake / [p]ass (default: pass) / [?]help > ").strip().lower()
+            cmd = (
+                self.ui.prompt(
+                    "Your move: [t]ake / [p]ass (default: pass) / [?]help > "
+                )
+                .strip()
+                .lower()
+            )
             if cmd in ("", "p", "pass"):
                 return "pass"
             if cmd in ("t", "take"):
@@ -201,8 +227,11 @@ class HumanCUI(Agent):
             if cmd in ("?", "h", "help"):
                 self.ui.write("Rules reminder:")
                 self.ui.write("- PASS: pay 1 token onto the card; turn passes left.")
-                self.ui.write("- TAKE: take the card + all tokens on it; draw new card and continue your turn.")
+                self.ui.write(
+                    "- TAKE: take the card + all tokens on it; draw new card and continue your turn."
+                )
                 continue
+
 
 class RandomAI(Agent):
     def choose(self, game: NoThanksGame, idx: int) -> str:
@@ -211,8 +240,10 @@ class RandomAI(Agent):
             return "take"
         return "take" if game.rng.random() < 0.5 else "pass"
 
+
 class GreedyAI(Agent):
     """Myopic baseline: take if immediate Δscore <= 0, else pass if possible."""
+
     def choose(self, game: NoThanksGame, idx: int) -> str:
         ps = game.players[idx]
         if ps.tokens == 0:
@@ -221,6 +252,7 @@ class GreedyAI(Agent):
         assert card is not None
         take_cost = marginal_card_points(ps.cards, card) - game.tokens_on_card
         return "take" if take_cost <= 0 else "pass"
+
 
 @dataclass
 class HeuristicParams:
@@ -239,9 +271,11 @@ class HeuristicParams:
     milk_opp_want_threshold: float = 0.0
     milk_min_opp_tokens: int = 1
 
+
 HEURISTIC_V2_PARAMS = HeuristicParams(
     milk_max_tokens_on_card=9,
 )
+
 
 class HeuristicAI(Agent):
     """
@@ -253,6 +287,7 @@ class HeuristicAI(Agent):
     - Sometimes TAKE to block the current leader if the swing is large.
     - Sometimes PASS on a good card to "milk" extra tokens, if likely safe.
     """
+
     def __init__(self, name: str, params: Optional[HeuristicParams] = None):
         super().__init__(name)
         self.p = params or HeuristicParams()
@@ -280,7 +315,10 @@ class HeuristicAI(Agent):
         my_score = score_player(me.cards, me.tokens)
 
         opp_indices = [j for j in range(game.n) if j != idx]
-        opp_scores = {j: score_player(game.players[j].cards, game.players[j].tokens) for j in opp_indices}
+        opp_scores = {
+            j: score_player(game.players[j].cards, game.players[j].tokens)
+            for j in opp_indices
+        }
         leader = min(opp_scores, key=lambda j: opp_scores[j])
         leader_score = opp_scores[leader]
 
@@ -294,7 +332,10 @@ class HeuristicAI(Agent):
                 return "take"
 
         # 2) Milk: pass once on a card that is already good for us and seems bad for others.
-        if my_take_cost <= self.p.milk_good_cost and t_on < self.p.milk_max_tokens_on_card:
+        if (
+            my_take_cost <= self.p.milk_good_cost
+            and t_on < self.p.milk_max_tokens_on_card
+        ):
             safe = True
             for j in opp_indices:
                 opp = game.players[j]
@@ -315,6 +356,7 @@ class HeuristicAI(Agent):
 
 AI_CHOICES = ("random", "greedy", "heuristic", "heuristic2")
 
+
 def make_ai(ai_type: str, name: str) -> Agent:
     ai_type = ai_type.lower()
     if ai_type == "random":
@@ -331,6 +373,7 @@ def make_ai(ai_type: str, name: str) -> Agent:
 # ---------------------------
 # CUI rendering
 # ---------------------------
+
 
 class UILogger:
     def __init__(self, log_path: Optional[Path] = None):
@@ -354,20 +397,62 @@ class UILogger:
         if self.fp:
             self.fp.close()
 
-def render(game: NoThanksGame, show_removed: bool, ui: UILogger) -> None:
+
+def cards_row(
+    cards: Set[int],
+    start: int = 3,
+    end: int = 35,
+    mark_card: Optional[int] = None,
+    mark_token: str = "AC",
+) -> str:
+    parts = []
+    for c in range(start, end + 1):
+        if mark_card is not None and c == mark_card:
+            parts.append(mark_token)
+        elif c in cards:
+            parts.append(f"{c:02d}")
+        else:
+            parts.append("__")
+    return "".join(parts)
+
+
+def render_card_map(game: NoThanksGame, ui: UILogger) -> None:
+    all_cards = set(range(3, 36))
+    seen = set()
+    for p in game.players:
+        seen |= p.cards
+    if game.active_card is not None:
+        seen.add(game.active_card)
+    unknown = all_cards - seen
+    ui.write("(unseen) " + cards_row(unknown, mark_card=game.active_card))
+    for p in game.players:
+        ui.write(f"{p.name:8s} {cards_row(p.cards)}")
+
+
+def render(
+    game: NoThanksGame, show_removed: bool, show_remaining: bool, ui: UILogger
+) -> None:
     ui.write()
     ui.write("=" * 72)
     if show_removed:
         ui.write(f"Removed(9): {sorted(game.removed)}")
     card_str = "-" if game.active_card is None else str(game.active_card)
-    ui.write(f"[{card_str}]-{game.tokens_on_card} (Active card: {card_str}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()})")
+    ui.write(
+        f"[{card_str}]-{game.tokens_on_card} (Active card: {card_str}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()})"
+    )
     ui.write("-" * 72)
     scores = game.provisional_scores()
     for i, p in enumerate(game.players):
         turn = ">" if i == game.current else " "
-        ui.write(f"{turn}[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
-                 f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}")
+        ui.write(
+            f"{turn}[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
+            f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}"
+        )
+    if show_remaining:
+        ui.write("-" * 72)
+        render_card_map(game, ui)
     ui.write("=" * 72)
+
 
 def print_final(game: NoThanksGame, ui: UILogger) -> None:
     ui.write("\nFINAL RESULTS")
@@ -375,7 +460,9 @@ def print_final(game: NoThanksGame, ui: UILogger) -> None:
     order = sorted(range(game.n), key=lambda i: scores[i])  # low score wins
     for rank, i in enumerate(order, start=1):
         p = game.players[i]
-        ui.write(f"{rank:>2}. {p.name:10s} score={scores[i]:4d}  cardPts={score_cards(p.cards):3d}  tokens={p.tokens:2d}  cards={runs_str(p.cards)}")
+        ui.write(
+            f"{rank:>2}. {p.name:10s} score={scores[i]:4d}  cardPts={score_cards(p.cards):3d}  tokens={p.tokens:2d}  cards={runs_str(p.cards)}"
+        )
     winners = [i for i in range(game.n) if scores[i] == min(scores)]
     if len(winners) == 1:
         ui.write(f"Winner: {game.players[winners[0]].name}")
@@ -387,7 +474,15 @@ def print_final(game: NoThanksGame, ui: UILogger) -> None:
 # Modes
 # ---------------------------
 
-def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_removed: bool, show_math: bool) -> None:
+
+def play_cui(
+    seed: Optional[int],
+    seat: int,
+    ai_types: Tuple[str, str],
+    show_removed: bool,
+    show_remaining: bool,
+    show_math: bool,
+) -> None:
     n = 3
     tokens = NoThanksGame.starting_tokens(n)
 
@@ -402,7 +497,10 @@ def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_rem
 
     try:
         ui.write(f"(log) {log_path}")
-        ui.write(f"(setup) seed={seed} seat={seat} ai={ai_types} show_removed={show_removed} show_math={show_math}")
+        ui.write(
+            f"(setup) seed={seed} seat={seat} ai={ai_types} show_removed={show_removed} "
+            f"show_remaining={show_remaining} show_math={show_math}"
+        )
 
         players = [PlayerState(names[i], tokens) for i in range(n)]
         game = NoThanksGame(players, seed=seed)
@@ -417,7 +515,12 @@ def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_rem
 
         # Main loop
         while not game.is_over():
-            render(game, show_removed=show_removed, ui=ui)
+            render(
+                game,
+                show_removed=show_removed,
+                show_remaining=show_remaining,
+                ui=ui,
+            )
             idx = game.current
             agent = agents[idx]
 
@@ -432,12 +535,15 @@ def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_rem
             else:
                 game.apply_take()
 
-        render(game, show_removed=show_removed, ui=ui)
+        render(game, show_removed=show_removed, show_remaining=show_remaining, ui=ui)
         print_final(game, ui=ui)
     finally:
         ui.close()
 
-def simulate(games: int, seed: int, ai_types: Tuple[str, str, str], verbose: bool) -> None:
+
+def simulate(
+    games: int, seed: int, ai_types: Tuple[str, str, str], verbose: bool
+) -> None:
     rng = random.Random(seed)
     n = 3
     tokens = NoThanksGame.starting_tokens(n)
@@ -486,10 +592,13 @@ def simulate(games: int, seed: int, ai_types: Tuple[str, str, str], verbose: boo
     print(f"games={games} seed={seed} AIs={ai_types}")
     print("-" * 60)
     for i in range(n):
-        print(f"AI{i} ({ai_types[i]:9s})  mean={means[i]:6.2f}  sd={stdevs[i]:6.2f}  winrate={win_counts[i]/games:6.2%}")
+        print(
+            f"AI{i} ({ai_types[i]:9s})  mean={means[i]:6.2f}  sd={stdevs[i]:6.2f}  winrate={win_counts[i] / games:6.2%}"
+        )
     print("-" * 60)
     # sanity
-    print(f"(winrates sum) {total_wins/games:6.2%}  (ties are split)")
+    print(f"(winrates sum) {total_wins / games:6.2%}  (ties are split)")
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="No Thanks! CUI + simple AIs")
@@ -498,26 +607,48 @@ def main() -> None:
     p_play = sub.add_parser("play", help="Play 1 Human vs 2 AIs (CUI)")
     p_play.add_argument("--seed", type=int, default=None, help="Random seed")
     p_play.add_argument("--seat", type=int, default=0, help="Your seat index (0/1/2)")
-    p_play.add_argument("--ai", nargs=2, default=("heuristic", "greedy"), choices=AI_CHOICES,
-                        help="Two AI types for the non-human seats, in seat order.")
-    p_play.add_argument("--show-removed", action="store_true", help="Debug: show the 9 removed cards")
-    p_play.add_argument("--no-math", action="store_true", help="Hide Δscore hint during human turns")
+    p_play.add_argument(
+        "--ai",
+        nargs=2,
+        default=("heuristic2", "heuristic2"),
+        choices=AI_CHOICES,
+        help="Two AI types for the non-human seats, in seat order.",
+    )
+    p_play.add_argument(
+        "--show-removed", action="store_true", help="Debug: show the 9 removed cards"
+    )
+    p_play.add_argument(
+        "--no-math-hint",
+        action="store_true",
+        help="計算すればわかるヒントを表示しない",
+    )
 
     p_sim = sub.add_parser("simulate", help="Run 3 AIs and collect stats")
     p_sim.add_argument("--games", type=int, default=10000)
     p_sim.add_argument("--seed", type=int, default=0)
-    p_sim.add_argument("--ai", nargs=3, default=("heuristic", "greedy", "greedy"), choices=AI_CHOICES)
-    p_sim.add_argument("--verbose", action="store_true", help="Print logs for first few games")
+    p_sim.add_argument(
+        "--ai",
+        nargs=3,
+        default=("heuristic2", "heuristic2", "heuristic2"),
+        choices=AI_CHOICES,
+    )
+    p_sim.add_argument(
+        "--verbose", action="store_true", help="Print logs for first few games"
+    )
 
     args = parser.parse_args()
 
     if args.mode == "play":
+        show_remaining = True
+        if args.no_math_hint:
+            show_remaining = False
         play_cui(
             seed=args.seed,
             seat=args.seat,
             ai_types=(args.ai[0], args.ai[1]),
             show_removed=args.show_removed,
-            show_math=(not args.no_math),
+            show_remaining=show_remaining,
+            show_math=(not args.no_math_hint),
         )
     elif args.mode == "simulate":
         simulate(
@@ -526,6 +657,7 @@ def main() -> None:
             ai_types=(args.ai[0], args.ai[1], args.ai[2]),
             verbose=args.verbose,
         )
+
 
 if __name__ == "__main__":
     main()

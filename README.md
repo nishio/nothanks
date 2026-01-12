@@ -28,10 +28,10 @@ python nothanks_cui.py play --ai heuristic greedy
 python nothanks_cui.py play --seat 1 --ai heuristic greedy
 ```
 
-人間ターンで表示される Δscore のヒントを消す：
+人間ターンで表示される計算ヒントを消す：
 
 ```bash
-python nothanks_cui.py play --no-math
+python nothanks_cui.py play --no-math-hint
 ```
 
 （デバッグ用）除外9枚を表示：

@@ -73,6 +73,10 @@ python nothanks_cui.py simulate --games 50 --verbose
 
 スクリプト内の `HeuristicParams` を編集するとすぐ反映されます。
 
+## ドキュメント
+
+- Heuristic AIの詳細: `docs/heuristic.md`
+
 ## 参考（今後の拡張案）
 
 - ルールベースのパラメータを自己対戦でスイープして最適化

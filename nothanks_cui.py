@@ -173,21 +173,28 @@ class HumanCUI(Agent):
     def choose(self, game: NoThanksGame, idx: int) -> str:
         ps = game.players[idx]
         if ps.tokens == 0:
-            print("You have 0 tokens -> forced TAKE.")
             return "take"
 
         while True:
             if self.show_math:
                 card = game.active_card
                 assert card is not None
-                take_cost = marginal_card_points(ps.cards, card) - game.tokens_on_card
-                print(f"(info) If TAKE now: Δscore = {take_cost:+d} (lower is better).")
+                take_delta = marginal_card_points(ps.cards, card)
+                take_cost = take_delta - game.tokens_on_card
+                print(f"(info) If TAKE now: Δscore = {take_cost:+d} (ΔcardPts={take_delta:+d}, tokens_on_card={game.tokens_on_card}).")
+                print("(info) If PASS now: Δscore = +1 (spend 1 token).")
+                t_on_pass = game.tokens_on_card + 1
+                for j, opp in enumerate(game.players):
+                    if j == idx:
+                        continue
+                    opp_take_cost = marginal_card_points(opp.cards, card) - t_on_pass
+                    print(f"(info) If PASS and {opp.name} TAKES: {opp.name} Δscore = {opp_take_cost:+d}.")
 
-            cmd = input("Your move: [t]ake / [p]ass / [?]help > ").strip().lower()
+            cmd = input("Your move: [t]ake / [p]ass (default: pass) / [?]help > ").strip().lower()
+            if cmd in ("", "p", "pass"):
+                return "pass"
             if cmd in ("t", "take"):
                 return "take"
-            if cmd in ("p", "pass"):
-                return "pass"
             if cmd in ("?", "h", "help"):
                 print("Rules reminder:")
                 print("- PASS: pay 1 token onto the card; turn passes left.")
@@ -321,13 +328,14 @@ def render(game: NoThanksGame, show_removed: bool = False) -> None:
     print("=" * 72)
     if show_removed:
         print(f"Removed(9): {sorted(game.removed)}")
-    print(f"Active card: {game.active_card}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()}")
+    card_str = "-" if game.active_card is None else str(game.active_card)
+    print(f"[{card_str}]-{game.tokens_on_card} (Active card: {card_str}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()})")
     print("-" * 72)
     scores = game.provisional_scores()
     for i, p in enumerate(game.players):
-        turn = " <--" if i == game.current else ""
-        print(f"[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
-              f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}{turn}")
+        turn = ">" if i == game.current else " "
+        print(f"{turn}[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
+              f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}")
     print("=" * 72)
 
 def print_final(game: NoThanksGame) -> None:
@@ -374,8 +382,9 @@ def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_rem
 
         action = agent.choose(game, idx)
         ps = game.players[idx]
-        if action == "pass" and ps.tokens == 0:
+        if ps.tokens == 0:
             action = "take"
+            print(f"{ps.name} has 0 tokens -> forced TAKE.")
 
         if action == "pass":
             game.apply_pass()

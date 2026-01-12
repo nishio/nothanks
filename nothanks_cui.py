@@ -21,7 +21,9 @@ from __future__ import annotations
 import argparse
 import random
 import statistics
+from datetime import datetime
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import List, Set, Optional, Dict, Tuple
 
 
@@ -166,8 +168,9 @@ class Agent:
         raise NotImplementedError
 
 class HumanCUI(Agent):
-    def __init__(self, name: str, show_math: bool = True):
+    def __init__(self, name: str, ui: "UILogger", show_math: bool = True):
         super().__init__(name)
+        self.ui = ui
         self.show_math = show_math
 
     def choose(self, game: NoThanksGame, idx: int) -> str:
@@ -181,24 +184,24 @@ class HumanCUI(Agent):
                 assert card is not None
                 take_delta = marginal_card_points(ps.cards, card)
                 take_cost = take_delta - game.tokens_on_card
-                print(f"(info) If TAKE now: Δscore = {take_cost:+d} (ΔcardPts={take_delta:+d}, tokens_on_card={game.tokens_on_card}).")
-                print("(info) If PASS now: Δscore = +1 (spend 1 token).")
+                self.ui.write(f"(info) If TAKE now: Δscore = {take_cost:+d} (ΔcardPts={take_delta:+d}, tokens_on_card={game.tokens_on_card}).")
+                self.ui.write("(info) If PASS now: Δscore = +1 (spend 1 token).")
                 t_on_pass = game.tokens_on_card + 1
                 for j, opp in enumerate(game.players):
                     if j == idx:
                         continue
                     opp_take_cost = marginal_card_points(opp.cards, card) - t_on_pass
-                    print(f"(info) If PASS and {opp.name} TAKES: {opp.name} Δscore = {opp_take_cost:+d}.")
+                    self.ui.write(f"(info) If PASS and {opp.name} TAKES: {opp.name} Δscore = {opp_take_cost:+d}.")
 
-            cmd = input("Your move: [t]ake / [p]ass (default: pass) / [?]help > ").strip().lower()
+            cmd = self.ui.prompt("Your move: [t]ake / [p]ass (default: pass) / [?]help > ").strip().lower()
             if cmd in ("", "p", "pass"):
                 return "pass"
             if cmd in ("t", "take"):
                 return "take"
             if cmd in ("?", "h", "help"):
-                print("Rules reminder:")
-                print("- PASS: pay 1 token onto the card; turn passes left.")
-                print("- TAKE: take the card + all tokens on it; draw new card and continue your turn.")
+                self.ui.write("Rules reminder:")
+                self.ui.write("- PASS: pay 1 token onto the card; turn passes left.")
+                self.ui.write("- TAKE: take the card + all tokens on it; draw new card and continue your turn.")
                 continue
 
 class RandomAI(Agent):
@@ -329,33 +332,55 @@ def make_ai(ai_type: str, name: str) -> Agent:
 # CUI rendering
 # ---------------------------
 
-def render(game: NoThanksGame, show_removed: bool = False) -> None:
-    print()
-    print("=" * 72)
+class UILogger:
+    def __init__(self, log_path: Optional[Path] = None):
+        self.log_path = log_path
+        self.fp = open(log_path, "w", encoding="utf-8") if log_path else None
+
+    def write(self, line: str = "") -> None:
+        print(line)
+        if self.fp:
+            self.fp.write(line + "\n")
+            self.fp.flush()
+
+    def prompt(self, prompt: str) -> str:
+        resp = input(prompt)
+        if self.fp:
+            self.fp.write(f"{prompt}{resp}\n")
+            self.fp.flush()
+        return resp
+
+    def close(self) -> None:
+        if self.fp:
+            self.fp.close()
+
+def render(game: NoThanksGame, show_removed: bool, ui: UILogger) -> None:
+    ui.write()
+    ui.write("=" * 72)
     if show_removed:
-        print(f"Removed(9): {sorted(game.removed)}")
+        ui.write(f"Removed(9): {sorted(game.removed)}")
     card_str = "-" if game.active_card is None else str(game.active_card)
-    print(f"[{card_str}]-{game.tokens_on_card} (Active card: {card_str}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()})")
-    print("-" * 72)
+    ui.write(f"[{card_str}]-{game.tokens_on_card} (Active card: {card_str}   Tokens on card: {game.tokens_on_card}   Deck left: {game.remaining_draw()})")
+    ui.write("-" * 72)
     scores = game.provisional_scores()
     for i, p in enumerate(game.players):
         turn = ">" if i == game.current else " "
-        print(f"{turn}[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
-              f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}")
-    print("=" * 72)
+        ui.write(f"{turn}[{i}] {p.name:10s}  tokens={p.tokens:2d}  cards={runs_str(p.cards):25s}  "
+                 f"cardPts={score_cards(p.cards):3d}  score={scores[i]:4d}")
+    ui.write("=" * 72)
 
-def print_final(game: NoThanksGame) -> None:
-    print("\nFINAL RESULTS")
+def print_final(game: NoThanksGame, ui: UILogger) -> None:
+    ui.write("\nFINAL RESULTS")
     scores = game.provisional_scores()
     order = sorted(range(game.n), key=lambda i: scores[i])  # low score wins
     for rank, i in enumerate(order, start=1):
         p = game.players[i]
-        print(f"{rank:>2}. {p.name:10s} score={scores[i]:4d}  cardPts={score_cards(p.cards):3d}  tokens={p.tokens:2d}  cards={runs_str(p.cards)}")
+        ui.write(f"{rank:>2}. {p.name:10s} score={scores[i]:4d}  cardPts={score_cards(p.cards):3d}  tokens={p.tokens:2d}  cards={runs_str(p.cards)}")
     winners = [i for i in range(game.n) if scores[i] == min(scores)]
     if len(winners) == 1:
-        print(f"Winner: {game.players[winners[0]].name}")
+        ui.write(f"Winner: {game.players[winners[0]].name}")
     else:
-        print("Winners:", ", ".join(game.players[i].name for i in winners))
+        ui.write(f"Winners: {', '.join(game.players[i].name for i in winners)}")
 
 
 # ---------------------------
@@ -366,39 +391,51 @@ def play_cui(seed: Optional[int], seat: int, ai_types: Tuple[str, str], show_rem
     n = 3
     tokens = NoThanksGame.starting_tokens(n)
 
+    log_dir = Path("logs")
+    log_dir.mkdir(exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    log_path = log_dir / f"play-{timestamp}.txt"
+    ui = UILogger(log_path)
+
     names = [f"Player{i}" for i in range(n)]
     names[seat] = "YOU"
 
-    players = [PlayerState(names[i], tokens) for i in range(n)]
-    game = NoThanksGame(players, seed=seed)
-    game.setup()
+    try:
+        ui.write(f"(log) {log_path}")
+        ui.write(f"(setup) seed={seed} seat={seat} ai={ai_types} show_removed={show_removed} show_math={show_math}")
 
-    agents: List[Agent] = [None] * n  # type: ignore
-    agents[seat] = HumanCUI("YOU", show_math=show_math)
+        players = [PlayerState(names[i], tokens) for i in range(n)]
+        game = NoThanksGame(players, seed=seed)
+        game.setup()
 
-    ai_slots = [i for i in range(n) if i != seat]
-    agents[ai_slots[0]] = make_ai(ai_types[0], names[ai_slots[0]])
-    agents[ai_slots[1]] = make_ai(ai_types[1], names[ai_slots[1]])
+        agents: List[Agent] = [None] * n  # type: ignore
+        agents[seat] = HumanCUI("YOU", ui=ui, show_math=show_math)
 
-    # Main loop
-    while not game.is_over():
-        render(game, show_removed=show_removed)
-        idx = game.current
-        agent = agents[idx]
+        ai_slots = [i for i in range(n) if i != seat]
+        agents[ai_slots[0]] = make_ai(ai_types[0], names[ai_slots[0]])
+        agents[ai_slots[1]] = make_ai(ai_types[1], names[ai_slots[1]])
 
-        action = agent.choose(game, idx)
-        ps = game.players[idx]
-        if ps.tokens == 0:
-            action = "take"
-            print(f"{ps.name} has 0 tokens -> forced TAKE.")
+        # Main loop
+        while not game.is_over():
+            render(game, show_removed=show_removed, ui=ui)
+            idx = game.current
+            agent = agents[idx]
 
-        if action == "pass":
-            game.apply_pass()
-        else:
-            game.apply_take()
+            action = agent.choose(game, idx)
+            ps = game.players[idx]
+            if ps.tokens == 0:
+                action = "take"
+                ui.write(f"{ps.name} has 0 tokens -> forced TAKE.")
 
-    render(game, show_removed=show_removed)
-    print_final(game)
+            if action == "pass":
+                game.apply_pass()
+            else:
+                game.apply_take()
+
+        render(game, show_removed=show_removed, ui=ui)
+        print_final(game, ui=ui)
+    finally:
+        ui.close()
 
 def simulate(games: int, seed: int, ai_types: Tuple[str, str, str], verbose: bool) -> None:
     rng = random.Random(seed)
